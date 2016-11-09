@@ -28,8 +28,9 @@ title('Canvas');
 
 %% Repeat placing stroke
 brushhalf = 50;
+brushhalf = 70;
 
-numIter = 5000;
+numIter = 10000;
 i = numIter;
 while (i > 0),
     

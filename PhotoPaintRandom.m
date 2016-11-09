@@ -11,7 +11,7 @@ clc;
 % close all;
 clear;
 %% Read in photo & Create canvas
-photo = im2double(imread('scene.jpg'));
+photo = im2double(imread('DSC01128.jpg'));
 canvas = zeros(size(photo));
 
 % Display inputs
@@ -28,9 +28,8 @@ title('Canvas');
 
 %% Repeat placing stroke
 brushhalf = 50;
-brushhalf = 70;
 
-numIter = 10000;
+numIter = 7000;
 i = numIter;
 while (i > 0),
     
@@ -45,7 +44,7 @@ while (i > 0),
     canvas = add_stroke(x, y, brushhalf, photo(x,y,:), canvas);
     
     i = i - 1;
-    if (mod(i, 100) == 0),
+    if (mod(i, 150) == 0),
         brushhalf = brushhalf - 1;
     end
     

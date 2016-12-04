@@ -11,15 +11,15 @@ fg=paintParameters.fg;
 grid=floor(fg*(2*Ri+1));
 
 [imageHeight,imageWidth,channel]=size(referenceImage);
-for x=1:grid:imageHeight-grid
-    for y=1:grid:imageWidth-grid
-        M=D(x:x+grid,y:y+grid);
+for r=1:grid:imageHeight-grid
+    for c=1:grid:imageWidth-grid
+        M=D(r:r+grid,c:c+grid);
         areaError=mean2(M);
         T=paintParameters.T;
         if(areaError > T)
-            [x1,y1]=find(M==max(max(M)),1);
-            x1=x1+x-1;y1=y1+y-1;
-            s=makeStroke(Ri,x1,y1,referenceImage,gx,gy,canvas,paintParameters);
+            [r1,c1]=find(M==max(max(M)),1);
+            r1=r1+r-1;c1=c1+c-1;
+            s=makeStroke(Ri,r1,c1,referenceImage,gx,gy,canvas,paintParameters);
             strokes{1}=[strokes{1};{referenceImage(x1,y1,:)}];
             strokes{2}=[strokes{2};{s}];
         end

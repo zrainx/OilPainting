@@ -4,7 +4,6 @@ clear;
 
 % set parameters
 setParameters;
-
 % read photos
 sourceImage = im2double(imread('sample.png'));
 % create canvas
@@ -23,7 +22,6 @@ title('Canvas');
 canvas=paint(sourceImage,paintParameters); 
 
 % show result
-% figure
 subplot(1,2,1);
 imshow(sourceImage);
 title('Source Image');

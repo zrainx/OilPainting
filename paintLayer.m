@@ -1,7 +1,7 @@
 function [ canvas ] = paintLayer( canvas,referenceImage,gx,gy,Ri,paintParameters )
-% search each grid point?s neighborhood to find the nearby point with the greatest error, 
-% and paint at this location. All strokes for the layer are planned at once before rendering. 
-% Then the strokes are rendered in random order to prevent an undesirable appearance of 
+% search each grid point?s neighborhood to find the nearby point with the greatest error,
+% and paint at this location. All strokes for the layer are planned at once before rendering.
+% Then the strokes are rendered in random order to prevent an undesirable appearance of
 % regularity in the brush strokes.
 
 strokes={{},{}};

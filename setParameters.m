@@ -1,6 +1,6 @@
 % parameters
-paintParameters=struct('T', 50/255, ...         % Approximation threshold 
-    'R', [8   4   2   1], ...     % Brush sizes 
+paintParameters=struct('T', 10/255, ...         % Approximation threshold
+    'R', [8 4 2 1], ...     % Brush sizes 
     'fc', 1,...        % Curvature Filter  Used to limit or exaggerate stroke curvature.
     'fo', 1,...        % Blur Factor 
     'minLength', 4,... % Used to restrict the possible stroke lengths. 

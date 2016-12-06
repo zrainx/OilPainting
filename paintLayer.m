@@ -10,7 +10,7 @@ D=sqrt(diff(:,:,1).^2+diff(:,:,2).^2+diff(:,:,3).^2);
 fg=paintParameters.fg;
 grid=floor(fg*(2*Ri+1));
 
-[imageHeight,imageWidth,channel]=size(referenceImage);
+[imageHeight,imageWidth,~]=size(referenceImage);
 for r=1:grid:imageHeight-grid
     for c=1:grid:imageWidth-grid
         M=D(r:r+grid,c:c+grid);
@@ -20,7 +20,7 @@ for r=1:grid:imageHeight-grid
             [r1,c1]=find(M==max(max(M)),1);
             r1=r1+r-1;c1=c1+c-1;
             s=makeStroke(Ri,r1,c1,referenceImage,gx,gy,canvas,paintParameters);
-            strokes{1}=[strokes{1};{referenceImage(x1,y1,:)}];
+            strokes{1}=[strokes{1};{referenceImage(r1,c1,:)}];
             strokes{2}=[strokes{2};{s}];
         end
     end
